@@ -1,0 +1,33 @@
+/* 1 */
+SELECT sum(m. estoque)
+	FROM medicamentos m
+	
+/* 2 */
+SELECT avg(EXTRACT(YEAR FROM current_date) - extract(YEAR FROM data_nascimento))
+FROM tutor
+	
+	
+/* 3 */
+SELECT min(m. preco)
+	FROM medicamentos m
+	
+/* 4 */
+SELECT max(p. peso)
+	FROM paciente p
+	
+/* 5 */
+SELECT count(*)
+	FROM tutor t
+	
+/* 6 */
+SELECT m. id_medicamento, sum(m. preco * m. estoque)
+FROM MEDICAMENTOS m 
+GROUP BY m. id_medicamento
+
+/* 7 */
+SELECT i.ID_RECEITA, SUM(i.TOTAL_ITENS)
+FROM ITENSRECEITA i 
+GROUP BY i.ID_RECEITA 
+HAVING SUM(i.TOTAL_ITENS) > 100
+
+
